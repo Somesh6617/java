@@ -1,0 +1,20 @@
+class Solution {
+    public int[] maxKDistinct(int[] nums, int k) {
+        int ar[]=new int[Math.min(k,nums.length)];
+        //int ar1[]=new int[k];
+        Arrays.sort(nums);
+        //Arrays.reverse(nums);
+        int sum=0;
+        int lp=Integer.MIN_VALUE;
+        for(int i=nums.length-1;i>=0&& sum<k;i--)
+        {
+            if(nums[i]!=lp)
+            {
+                ar[sum]=nums[i];
+                lp=nums[i];
+                sum++;
+            }
+        }
+        return Arrays.copyOfRange(ar, 0, sum);
+    }
+}

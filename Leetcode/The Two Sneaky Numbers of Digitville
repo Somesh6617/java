@@ -1,0 +1,30 @@
+class Solution {
+    public int[] getSneakyNumbers(int[] nums) {
+        int a[]=new int[nums.length];
+        int a1[]=new int[2];
+        int c=0;
+    for(int i=0;i<nums.length;i++)
+        a[nums[i]]++;
+    for(int i=0;i<nums.length;i++)
+    {
+        if(a[i]==2)
+        {
+            a1[c]=i;
+            c++;
+        }
+    }
+    return a1;
+    /*Arrays.sort(nums);
+    int a[]=new int[2];
+    int c=0;
+    for(int i=0;i<nums.length-1;i++)
+    {
+        if(nums[i]==nums[i+1])
+        {
+            a[c]=nums[i];
+            c++;
+        }
+    }
+    return a;*/
+    }
+}

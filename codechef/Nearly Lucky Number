@@ -1,0 +1,30 @@
+import java.util.*;
+ 
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long n = sc.nextLong();
+        int c=0;
+        while (n > 0) {
+            long rem = n % 10;
+            if (rem == 4 || rem == 7) {
+                c++;
+            }
+            n /= 10;
+        }
+        boolean b=true;
+        if (c==0) b=false;
+        int temp=c;
+        while(temp>0)
+        {
+            int x=temp%10;
+            if(x!=4 && x!=7)
+            {
+                b=false;
+                break;
+            }
+            temp/=10;
+        }
+        System.out.println(b ? "YES" : "NO");
+    }
+}

@@ -1,0 +1,13 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int y = sc.nextInt();
+        sc.nextLine();
+        String s=sc.nextLine();
+        if(s.contains("1"))
+            System.out.println("HARD");
+        else
+            System.out.println("EASY");
+    }
+}

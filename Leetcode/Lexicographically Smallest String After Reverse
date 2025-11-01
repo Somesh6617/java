@@ -1,0 +1,15 @@
+class Solution {
+    public String lexSmallest(String s) {
+        String ans = s;
+        int n = s.length();
+        for (int k = 1; k <= n; k++) {
+            String s1 = new StringBuilder(s.substring(0, k)).reverse().toString() +s.substring(k);
+        String s2 =s.substring(0,n-k)+new StringBuilder(s.substring(n-k)).reverse().toString();
+
+            if (s1.compareTo(ans) < 0) ans = s1;
+            if (s2.compareTo(ans) < 0) ans = s2;
+        }
+
+        return ans;
+    }
+}

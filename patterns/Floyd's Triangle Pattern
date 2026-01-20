@@ -1,0 +1,11 @@
+// This for loop is used for line, where i denotes the line
+int num = 1; // Starting number
+for (int i = 1; i <= n; i++) { 
+    // Each line will print i numbers
+    for (int j = 1; j <= i; j++) { 
+        System.out.print(num + " "); // Print the current number
+        num++; // Increment the number
+    } 
+    // After printing numbers in each line, move to the next new line
+    System.out.println();
+}

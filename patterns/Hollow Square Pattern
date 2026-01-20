@@ -1,0 +1,18 @@
+// This for loop is used for lines, where i denotes the line
+for (int i = 1; i <= n; i++) {  
+    // If the current row is the first or last, print n stars
+    if (i == 1 || i == n) {  
+        for (int j = 1; j <= n; j++) {  
+            System.out.print("*");  
+        }  
+    } else {  
+        // For middle rows, print a star, spaces, and another star
+        System.out.print("*");  // First star  
+        for (int j = 1; j <= n - 2; j++) {  
+            System.out.print(" ");  // Spaces in between  
+        }  
+        System.out.print("*");  // Last star  
+    }  
+    // Move to the next line after completing the row
+    System.out.println();  
+}  

@@ -1,0 +1,32 @@
+class Solution {
+    public int sumIndicesWithKSetBits(List<Integer> nums, int k) {
+        int total = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            if (Integer.bitCount(i) == k) {
+                total += nums.get(i);
+            }
+        }
+        return total;
+    }
+}
+                                   or
+class Solution {
+    public int sumIndicesWithKSetBits(List<Integer> nums, int k) {
+        int total = 0;
+
+        for (int i = 0; i < nums.size(); i++) {
+            int x = i;
+            int count = 0;
+
+            while (x > 0) {
+                count += (x & 1);
+                x >>= 1;
+            }
+
+            if (count == k) {
+                total += nums.get(i);
+            }
+        }
+        return total;
+    }
+}

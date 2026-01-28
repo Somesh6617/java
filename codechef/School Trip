@@ -1,0 +1,21 @@
+import java.util.*;
+
+class Codechef {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        while (t-- > 0) {
+            int N = sc.nextInt();
+            int X = sc.nextInt();
+            int K = sc.nextInt();
+            int rem = X % K;
+            int ans = rem;              
+            if (X + (K - rem) <= N) {   
+                ans = Math.min(ans, K - rem);
+            }
+
+            System.out.println(ans);
+        }
+    }
+}

@@ -1,0 +1,21 @@
+class Solution {
+    public String reverseByType(String s) {
+        StringBuilder s1=new StringBuilder();
+        StringBuilder s2=new StringBuilder();
+        StringBuilder s3=new StringBuilder();
+        for(int i=0;i<s.length();i++)
+        {
+            if(Character.isLetter(s.charAt(i))) s1.append(s.charAt(i));
+            else s2.append(s.charAt(i));
+        }
+        s1.reverse();
+        s2.reverse();
+        int a=0,b=0;
+        for(int i=0;i<s.length();i++)
+        {
+            if(Character.isLetter(s.charAt(i))) s3.append(s1.charAt(a++));
+            else s3.append(s2.charAt(b++));
+        }  
+        return s3.toString();
+    }
+}

@@ -1,0 +1,35 @@
+class RideSharingSystem {
+    List<Integer> dri;
+    List<Integer> ri;
+    public RideSharingSystem() {
+        dri=new ArrayList<>();
+        ri=new ArrayList<>();
+    }
+    public void addRider(int riderId) {
+        ri.add(riderId);
+    }
+    public void addDriver(int driverId) {
+        dri.add(driverId);
+    }
+    public int[] matchDriverWithRider() {
+        if(dri.isEmpty() || ri.isEmpty())
+        {
+            return new int[]{-1,-1};
+        }
+        int x=dri.remove(0);
+        int y=ri.remove(0);
+        return new int[]{x,y};
+    }
+    public void cancelRider(int riderId) {  
+        ri.remove(Integer.valueOf(riderId));
+    }
+}
+
+/**
+ * Your RideSharingSystem object will be instantiated and called as such:
+ * RideSharingSystem obj = new RideSharingSystem();
+ * obj.addRider(riderId);
+ * obj.addDriver(driverId);
+ * int[] param_3 = obj.matchDriverWithRider();
+ * obj.cancelRider(riderId);
+ */

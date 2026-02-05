@@ -1,0 +1,39 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+    public static int findGCDEuclidean(int num1, int num2) {
+        if (num2 == 0) {
+            return num1;
+        }
+        return findGCDEuclidean(num2, num1 % num2);
+    }
+
+    public static void main(String[] args) throws java.lang.Exception
+    {
+        // your code goes here
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t--> 0) {
+            int n = sc.nextInt();
+            Map < Integer, Integer > map = new HashMap < > ();
+            for (int i = 1; i <= n; i++) {
+                map.put(i, findGCDEuclidean(i, n));
+            }
+            List < Map.Entry < Integer, Integer >> list = new ArrayList < > (map.entrySet());
+            list.sort((entry1, entry2) -> {
+                int valueComparison = Integer.compare(entry2.getValue(), entry1.getValue());
+                if (valueComparison != 0) {
+                    return valueComparison;
+                }
+                return Integer.compare(entry1.getKey(), entry2.getKey());
+            });
+            for (Map.Entry < Integer, Integer > entry: list) {
+                System.out.print(entry.getKey() + " ");
+            }
+            System.out.println("");
+        }
+    }
+}

@@ -1,0 +1,43 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+    public static void main (String[] args) throws java.lang.Exception
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder out = new StringBuilder();
+
+        int t = Integer.parseInt(br.readLine().trim());
+
+        while (t-- > 0) {
+            int k = Integer.parseInt(br.readLine().trim());
+            StringTokenizer st = new StringTokenizer(br.readLine());
+
+            long stems = 1;              
+            boolean possible = true;
+            long LIMIT = (long)1e18;     
+            for (int i = 1; i <= k; i++) {
+                long leaves = Long.parseLong(st.nextToken());
+                if (leaves > stems) {
+                    possible = false;
+                }
+
+                stems -= leaves; 
+
+                if (i < k) {
+                    
+                    stems = Math.min(stems * 2, LIMIT);
+                } else {
+                    
+                    if (stems != 0) possible = false;
+                }
+            }
+
+            out.append(possible ? "Yes\n" : "No\n");
+        }
+
+        System.out.print(out);
+    }
+}

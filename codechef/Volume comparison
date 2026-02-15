@@ -1,0 +1,28 @@
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int A = scanner.nextInt();
+        int B = scanner.nextInt();
+        int C = scanner.nextInt();
+        int X = scanner.nextInt();
+        
+        
+        int volumeCuboid = A * B * C;
+        int volumeCube = X * X * X;
+        
+        
+        if (volumeCuboid > volumeCube) {
+            System.out.println("Cuboid");
+        } else if (volumeCube > volumeCuboid) {
+            System.out.println("Cube");
+        } else {
+            System.out.println("Equal");
+        }
+        
+        scanner.close();
+    }
+}

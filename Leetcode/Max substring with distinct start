@@ -1,0 +1,13 @@
+class Solution {
+    public int maxDistinct(String s) {
+        int fre[]=new int[26],c=0;
+        for(int i=0;i<s.length();i++)
+        {
+            int f=s.charAt(i)-'a';
+            fre[f]++;
+            if(fre[f]==1)
+            c++;
+        }
+        return c;
+    }
+}

@@ -1,0 +1,20 @@
+class Solution {
+    public String removeOuterParentheses(String s) {
+        StringBuilder ss=new StringBuilder();
+        int b=0;
+        for(char ch:s.toCharArray())
+        {
+            if(ch=='(')
+            {
+                if(b>0) ss.append(ch);
+                b++;
+            }
+            else
+            {
+                b--;
+                if(b>0) ss.append(ch);
+            }
+        }   
+        return ss.toString();
+    }
+}

@@ -1,0 +1,27 @@
+class Solution {
+    public String decodeMessage(String key, String message) {
+        StringBuffer s1=new StringBuffer();
+        StringBuffer s2=new StringBuffer();
+        char ch='a';
+        for(int i=0;i<key.length();i++)
+        {
+            if (s1.indexOf(String.valueOf(key.charAt(i))) == -1
+                    && key.charAt(i) != ' ') 
+            {
+                s1.append(key.charAt(i));
+                s2.append(ch++);
+            }
+        }
+        StringBuffer result = new StringBuffer();
+        for (int i = 0; i < message.length(); i++) {
+            char c = message.charAt(i);
+            if (c == ' ') {
+                result.append(' ');
+            } else {
+                int index = s1.indexOf(String.valueOf(c));
+                result.append(s2.charAt(index));
+            }
+        }
+        return result.toString();
+    }
+}

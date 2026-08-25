@@ -1,0 +1,12 @@
+class Solution {
+    public int minimumSum(int num) {
+        List<Integer> l=new ArrayList<>();
+        while(num>0)
+        {
+            l.add(num%10);
+            num/=10;
+        }
+        Collections.sort(l);
+        return (l.get(0)*10+l.get(3))+(l.get(1)*10+l.get(2));
+    }
+}

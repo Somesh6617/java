@@ -1,0 +1,23 @@
+class Solution {
+    public List<List<Integer>> findMatrix(int[] nums) {
+        List<List<Integer>> l=new ArrayList<>();
+        List<Integer> lq=new ArrayList<>();
+        for(int x:nums) lq.add(x);
+        while(!lq.isEmpty())
+        {
+            int i=0;
+            List<Integer> te=new ArrayList<>();
+            while(i<lq.size())
+            {
+            if(!te.contains(lq.get(i))) 
+            {
+                te.add(lq.get(i));
+                lq.remove(i);
+            }
+            else i++;
+            }
+            l.add(te);
+        }
+          return l;  
+    }
+}

@@ -1,0 +1,14 @@
+class Solution {
+    public double minimumAverage(int[] nums) {
+        Arrays.sort(nums);
+        int i=0,j=nums.length-1;
+        float mi=51;
+        while(i<j)
+        {
+            mi=Math.min(mi,(float)(nums[i]+nums[j])/2.0f);
+            i++;
+            j--;
+        }
+        return mi;
+    }
+}

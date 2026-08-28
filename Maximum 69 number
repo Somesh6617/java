@@ -1,0 +1,19 @@
+class Solution {
+    public int maximum69Number(int num) {
+
+        int temp = num;
+        int position = 1;
+        int lastSix = 0;
+
+        while (temp > 0) {
+            if (temp % 10 == 6) {
+                lastSix = position;
+            }
+
+            position *= 10;
+            temp /= 10;
+        }
+
+        return num + 3 * lastSix;
+    }
+}

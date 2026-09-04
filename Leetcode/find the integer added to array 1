@@ -1,0 +1,13 @@
+class Solution {
+    public int addedInteger(int[] nums1, int[] nums2) {
+        // Intuition 1: Sort both, check first num
+        // Intuition 2: Find lowest 2, return difference
+        int lowest = nums1[0];
+        int lowest2 = nums2[0];
+        for(int i = 1; i < nums1.length; i++) {
+            lowest = Math.min(nums1[i], lowest);
+            lowest2 = Math.min(nums2[i], lowest2);
+        }
+        return lowest2 - lowest;
+    }
+}
